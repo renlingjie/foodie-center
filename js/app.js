@@ -7,13 +7,12 @@ window.app = {
      // cookieDomain: "",                                                     // cookie 域
 
     /* 生产环境 */
-    serverUrl: "http://8.141.50.179:8088/foodMart-api",                  // 接口服务接口地址（后端项目地址）
-    paymentServerUrl: "http://payment.t.mukewang.com/foodie-payment",    // 支付中心服务地址
-    shopServerUrl: "http://8.141.50.179:8080/foodie-shop/",              // 门户网站地址，就是我们这个前端的文件名
-    centerServerUrl: "http://8.141.50.179:8080/foodie-center/",     // 用户中心地址
-    cookieDomain: "foodieshop.ltd",            	// cookie域（主要是多个域名才会需要设置，这里就一个域名，可以不设置）
-    
-    //cookieDomain: ".z.mukewang.com;",  
+    serverUrl: "http://43.138.12.238:20004",                                 // 接口服务接口地址--->后端Gateway
+    paymentServerUrl: "http://payment.t.mukewang.com/foodie-payment",         // 支付中心服务地址
+    shopServerUrl: "http://43.138.12.238:20004/foodie-shop/",                  // 门户网站地址--->后端Gateway
+    centerServerUrl: "http://43.138.12.238:20004/foodie-center/",              // 用户中心地址--->后端Gateway
+    // cookieDomain: "foodieshop.ltd",            	// cookie域（主要是多个域名才会需要设置，这里就一个域名，可以不设置）
+    cookieDomain: "43.138.12.238",
 
     ctx: "/foodie-center",
 
