@@ -315,6 +315,23 @@
 						// console.log(userInfo);
 						// 请求后端获得最新数据
 						var serverUrl = app.serverUrl;
+                        // 在请求头加入鉴权的信息，名字要和后端接收请求头的名字一样
+                        axios.interceptors.request.use(config => {
+                                if (config.push === '/') {
+                                } else {
+                                    if (localStorage.getItem('token')) {
+                                        //在请求头加入token，名字要和后端接收请求头的token名字一样
+                                        config.headers.Authorization=localStorage.getItem('token');
+                                    }
+                                    if (localStorage.getItem('uid')) {
+                                        config.headers["rlj-user-id"]=localStorage.getItem('uid');
+                                    }
+                                }
+                                return config;
+                            }, error => {
+                                return Promise.reject(error);
+                            }
+                        );
 						axios.defaults.withCredentials = true;
 						axios.post(
 								serverUrl + '/userInfo/update?userId=' + userInfo.id, 
@@ -343,6 +360,23 @@
 						// console.log(userInfo);
 						// 请求后端获得最新数据
 						var serverUrl = app.serverUrl;
+                        // 在请求头加入鉴权的信息，名字要和后端接收请求头的名字一样
+                        axios.interceptors.request.use(config => {
+                                if (config.push === '/') {
+                                } else {
+                                    if (localStorage.getItem('token')) {
+                                        //在请求头加入token，名字要和后端接收请求头的token名字一样
+                                        config.headers.Authorization=localStorage.getItem('token');
+                                    }
+                                    if (localStorage.getItem('uid')) {
+                                        config.headers["rlj-user-id"]=localStorage.getItem('uid');
+                                    }
+                                }
+                                return config;
+                            }, error => {
+                                return Promise.reject(error);
+                            }
+                        );
 						axios.defaults.withCredentials = true;
 						axios.get(
 								serverUrl + '/center/userInfo?userId=' + userInfo.id, {}, 
