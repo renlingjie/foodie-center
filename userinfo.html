@@ -238,9 +238,9 @@
 						var serverUrl = app.serverUrl;
 						axios.defaults.withCredentials = true;
 						axios.post(
-								//serverUrl + '/userInfo/uploadFace?userId=' + userInfo.id,
-								// TODO FastDFS
-								'http://localhost:8777/fdfs/uploadFace?userId=' + userInfo.id,
+								serverUrl + '/userInfo/uploadFace?userId=' + userInfo.id,
+								// TODO FastDFS 这里没有使用分布式的FastDFS，而是存储在User的服务节点上，如果后续User要作为集群，就需要改为FastDfs
+								// 'http://localhost:8777/fdfs/uploadFace?userId=' + userInfo.id,
 								multiForm, 
 								{
 									headers: {
